@@ -6,14 +6,15 @@ import android.graphics.Color
 import android.graphics.Paint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.MotionEvent
 import android.view.View
 
 class GameActivity(context: Context) : View(context) {
 
-    val paint = Paint(Paint.ANTI_ALIAS_FLAG)
-    val xPos: Float = 200f
-    val yPos: Float = 200f
-
-
-
+    override fun onTouchEvent(event: MotionEvent): Boolean{
+        var xPos = event.getX()
+        var yPos = event.getY()
+        invalidate()
+        return true
+    }
 }
